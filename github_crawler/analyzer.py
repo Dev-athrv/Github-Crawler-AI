@@ -1,7 +1,11 @@
 import requests
 import time
+from dotenv import load_dotenv
+import os
 
-# Keep the Google Gemini import for backward compatibility
+load_dotenv()
+
+
 try:
     import google.generativeai as genai
     GEMINI_AVAILABLE = True
@@ -22,7 +26,7 @@ class RepoAnalyzer:
         self.use_ollama = use_ollama
         self.ollama_model = ollama_model
         
-        # Initialize Gemini model if API key is provided and not using Ollama
+        # Initializing Gemini model if API key is provided and not using Ollama
         self.gemini_available = False
         if gemini_api_key and not use_ollama and GEMINI_AVAILABLE:
             try:
@@ -33,7 +37,7 @@ class RepoAnalyzer:
             except Exception as e:
                 print(f"Failed to initialize Gemini model: {e}")
         
-        # Initialize Ollama availability if specified
+        # Initializing Ollama availability if specified
         self.ollama_available = False
         if use_ollama:
             try:

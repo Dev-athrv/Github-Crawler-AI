@@ -6,6 +6,10 @@ import argparse
 import os
 import sys
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 # Add the parent directory to the path to allow importing the package
 parent_dir = Path(__file__).resolve().parent.parent
