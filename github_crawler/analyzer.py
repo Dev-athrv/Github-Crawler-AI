@@ -10,7 +10,7 @@ except ImportError:
     print("Google Generative AI package not installed. Gemini functionality will be disabled.")
 
 class RepoAnalyzer:
-    def __init__(self, gemini_api_key="AIzaSyDzLMfYNi41x8gCW7Hq3s64_x94ckWMK_8", use_ollama=False, ollama_model="codellama:7b"):
+    def __init__(self, gemini_api_key="", use_ollama=False, ollama_model="codellama:7b"):
         """
         Initialize the repository analyzer.
 
